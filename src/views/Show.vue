@@ -6,20 +6,20 @@
         </div>
         <div class="card-body">
           <blockquote class="blockquote mb-0">
-            <h4>{{ phone_number }}</h4>
             <h4>{{ email }}</h4>
+            <h4>{{ phone_number }}</h4>
             <h4>{{ short_bio }}</h4>
             <h4>{{ linkedin_url }}</h4>
             <h4>{{ personal_website_url }}</h4>
             <h4>{{ github_url }}</h4>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-          </blockquote>
+            <h3>{{ city_state }}</h3>
+<!--             <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+ -->          </blockquote>
         </div>
       </div>
      
     <!--   <h1>{{ id }}</h1> -->
 
-      <h3>{{ city_state }}</h3>
     </div>
 </template>
 
