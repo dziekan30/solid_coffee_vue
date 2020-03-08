@@ -6,8 +6,6 @@
           <h1 id="name-size">{{ student.first_name }}{{" "}}{{ student.last_name }}</h1>
 
             <div class="card-body">
-              <blockquote class="blockquote mb-0">
-
 
                 <div class="right-side">
                   <h4>Email: {{ student.email }}</h4>
@@ -22,49 +20,67 @@
                   <h4>GitHub: {{ student.github_url }}</h4>
                 </div>
 
-              </blockquote>
             </div>
         </div>
 
         <div class="card" >
-           <h1> Education:</h1> 
-          <div class="card-body" v-for="school in schools" >
-            <div class="card">
-              <h2>{{school.university_name}}</h2>
-              <h3> Start Date: {{school.start_date}}{{" "}} || End Date: {{school.end_date}}</h3>
-              <h3>{{school.degree}}</h3>
-              <h3>{{school.details}}</h3>
+           <h1 class="title-wrapping"> Education:</h1> 
+          <div class="main-wrapping">
+            <div class="card-body" v-for="school in schools" >
+              <div class="card">
+                <div class="wrapping">
+                  <h2>School Name: {{school.university_name}}</h2>
+                  <h3> Start Date: {{school.start_date}}{{" "}} || End Date: {{school.end_date}}</h3>
+                  <h3>{{school.degree}}</h3>
+                  <h3>{{school.details}}</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="card">
-            <h1>Skills</h1>
-          <div class="card" >
+            <h1 class="title-wrapping">Skills:</h1>
+          <div class="main-wrapping">
             <div class="card-body" v-for="skill in skills">
-              <h5>{{skill.skill_name}}</h5>
+              <div class="card" >
+                <div class="wrapping">
+                  <h3>{{skill.skill_name}}</h3>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
           <div class="card">
-            <div class="card-body" v-for="project in projects">
-              <h5>Projects</h5>
-              <h5>{{project.name}}</h5>
-              <h5>{{project.description}}</h5>
-              <h5>{{project.url}}</h5>
+              <h1 class="title-wrapping">Projects:</h1>
+            <div class="main-wrapping">
+              <div class="card-body" v-for="project in projects">
+                <div class="card">
+                  <div class="wrapping">
+                    <h3>Project Name: {{project.name}}</h3>
+                    <h3>{{project.description}}</h3>
+                    <h3>{{project.url}}</h3> 
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="card">
-            <div class="card-body" v-for="experience in experiences">
-              <h3>Experiences</h3>
-              <h5>{{experience.company_name}}</h5>
-              <h5>{{experience.start_date}}</h5>
-              <h5>{{experience.end_date}}</h5>
-              <h5>{{experience.job_title}}</h5>
-              <h5>{{experience.current}}</h5>
-              <h5>{{experience.details}}</h5>
+              <h1 class="title-wrapping">Experiences:</h1>
+            <div class="main-wrapping">
+              <div class="card-body" v-for="experience in experiences">
+                <div class="card">
+                  <div class="wrapping">
+                    <h2>Company Name: {{experience.company_name}}</h2>
+                    <h3> Start Date: {{experience.start_date}}{{" "}} || End Date: {{experience.end_date}}</h3>
+                    <h3>{{experience.job_title}}</h3>
+                    <h3>{{experience.current}}</h3>
+                    <h3>{{experience.details}}</h3>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -116,25 +132,21 @@ export default {
       .get("https://hidden-dawn-34584.herokuapp.com/api/students")
       .then(response => {
         this.schools = response.data[0].educations;
-        // console.log(response.data[0].educations);
       });
     axios
       .get("https://hidden-dawn-34584.herokuapp.com/api/students")
       .then(response => {
         this.skills = response.data[0].skills;
-        // console.log(response.data[0].educations);
       });
     axios
       .get("https://hidden-dawn-34584.herokuapp.com/api/students")
       .then(response => {
         this.projects = response.data[0].projects;
-        // console.log(response.data[0].educations);
       });
     axios
       .get("https://hidden-dawn-34584.herokuapp.com/api/students")
       .then(response => {
         this.experiences = response.data[0].experiences;
-        // console.log(response.data[0].educations);
       });
 
   },

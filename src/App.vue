@@ -83,10 +83,11 @@ body {
 }
 .card {
   /*margin: 40px;*/
-  margin-top: 80px;
+  margin-top: 40px;
   margin-right: 12%;
   margin-left: 12%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
+
  
 }
 #name-size {
@@ -103,6 +104,17 @@ text-align: justify;
 }
 .school-style {
   font-size: 2em;
-
+}
+.wrapping {
+  background-color: #DDC3E8;
+  border-radius: 30px;
+}
+.main-wrapping {
+  background-color: #2F1B38;
+}
+.title-wrapping {
+  background-color: #946;
+  font-weight: bold;
+  font-size: 4em;
 }
 </style>
